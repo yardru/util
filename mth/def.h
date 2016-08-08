@@ -78,9 +78,17 @@ template<typename type>
     type pow(const type &a, int d)
     {
         if (d < 0)
-            return 1 / pow(a, -d);
+            return type(1) / pow(a, -d);
 
-        type r(1);
+        type r(1), b(a);
+
+        while (d > 0)
+        {
+            if (d % 2)
+                r *= b;
+            b *= b;
+            d /= 2;
+        }
 
         return r;
     }
