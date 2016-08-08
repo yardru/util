@@ -1,7 +1,7 @@
 #ifndef _TEMPLATE_H_
 #define _TEMPLATE_H_
 
-#include "def.h"
+#include <def/def.h>
 // "template_imp.h" file included in the end of file
 
 namespace mth
