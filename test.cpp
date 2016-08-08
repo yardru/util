@@ -74,14 +74,29 @@ void matr_test()
                     3.2, 5.6, 4.7, 3.1, 1.4);
     time_t t = time(NULL);
 
-    cout << (m1);
-    cout << (1.0 / m1);
-    cout << (m1 / m1);
+    cout << m1 * m1 * m1 * m1 * m1 * m1 * m1 * m1;
+    cout << pow(m1, 8);
+}
+
+void fixed_test()
+{
+    def::fixed_t<2> a(1), b(1.2), c(1.25), d(1.234), e(1.235);
+    def::fixed_t<1> q(b), x(c);
+
+    cout << a << "\n";
+    cout << b << "\n";
+    cout << c << "\n";
+    cout << d << "\n";
+    cout << e << "\n";
+    cout << q << "\n";
+    cout << x << "\n";
+    cout << (a + b) << "\n";
+    cout << (d + e) * b / c << "\n";
 }
 
 int main(void)
 {
-    matr_test();
+    fixed_test();
 
     return 0;
 }
