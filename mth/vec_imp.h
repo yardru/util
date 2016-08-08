@@ -13,7 +13,7 @@ namespace mth
     template <uint n, typename type>
         VEC_T & VEC_T::clone(const VEC_T &vec)
         {
-            def::copy_mass(_components, vec._components, n);
+            def::copy(_components, vec._components, n);
 
             return *this;
         }

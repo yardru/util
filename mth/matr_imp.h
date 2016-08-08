@@ -12,16 +12,9 @@ namespace mth
     template <uint m, uint n, typename type>
         MATR_T & MATR_T::clone(const MATR_T &matr)
         {
-            def::copy_mass(_components, matr._components, m * n);
+            def::copy(_components, matr._components, m * n);
 
             return *this;
-        }
-    // get random matrix
-    template <uint m, uint n, typename type>
-        static MATR_T MATR_T::rand(const type &min, const type &max)
-        {
-            MATR_T res;
-            return res;
         }
     // constructors
     template <uint m, uint n, typename type>
@@ -237,7 +230,7 @@ namespace mth
             return *this;
         }
     template <uint m, uint n, typename type>
-        MATR_T & MATR_T::row_add_to(uint i_to, const uint i_from, const type &s)
+        MATR_T & MATR_T::row_add_to(uint i_to, uint i_from, const type &s)
         {
             for (uint j = 0; j < n; j++)
                 (*this)[i_to][j] += (*this)[i_from][j] * s;
@@ -261,7 +254,7 @@ namespace mth
             return *this;
         }
     template <uint m, uint n, typename type>
-        MATR_T & MATR_T::col_add_to(uint j_to, const uint j_from, const type &s)
+        MATR_T & MATR_T::col_add_to(uint j_to, uint j_from, const type &s)
         {
             for (uint i = 0; i < m; i++)
                 (*this)[i][j_to] += (*this)[i][j_from] * s;

@@ -27,19 +27,19 @@ namespace def
             b = tmp;
         }
 
-    // swap two massive
+    // swap two arrays
     template<typename type>
-        void swap_mass(type *a, type *b, int n)
+        void swap(type *a, type *b, uint n = 1)
         {
-            for (int i = 0; i < n; i++)
+            for (uint i = 0; i < n; i++)
                 swap(a[i], b[i]);
         }
 
-    // copy one massive to another
+    // copy one array to another
     template<typename type>
-        void copy_mass(type *to, const type *from, int n)
+        void copy(type *to, const type *from, uint n = 1)
         {
-            for (int i = 0; i < n; i++)
+            for (uint i = 0; i < n; i++)
                 to[i] = from[i];
         }
 
@@ -55,6 +55,26 @@ namespace def
         type max(const type &a, const type &b)
         {
             return (a > b) ? a : b;
+        }
+
+    // minimum in array
+    template<typename type>
+        type min(const type *a, uint n)
+        {
+            type res = a[0];
+            for (int i = 1; i < n; i++)
+                res = min(res, a[i]);
+            return res;
+        }
+
+    // maximum in array
+    template<typename type>
+        type max(const type *a, uint n)
+        {
+            type res = a[0];
+            for (int i = 1; i < n; i++)
+                res = max(res, a[i]);
+            return res;
         }
 }
 
