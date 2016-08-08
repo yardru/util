@@ -2,54 +2,10 @@
 #include <string>
 #include <time.h>
 
-#include "mth.h"
+#include <mth/mth.h>
 
 using namespace std;
 using namespace mth;
-
-template <typename type1, typename type2>
-    class test_t
-    {
-    public:
-        type1 value1;
-        type2 value2;
-
-        void func(void)
-        {
-            value1 = -1.5;
-            value2 = -2.5;
-        }
-    };
-
-
-template <typename type3>
-    class test_t<type3, type3>
-    {
-    public:
-        type3 value3;
-
-        void func(void);
-    };
-
-void test_test()
-{
-    //test_t<int, int> t;
-    //t.value1 = 1.5;
-    //t.value2 = 2.5;
-    //t.value3 = 3.5;
-    //t.func();
-    //cout << "test1: " << t.value1 << "\n";
-    //cout << "test2: " << t.value2 << "\n";
-    //cout << "test3: " << t.value3 << "\n";
-}
-
-void ratio_test()
-{
-    ratio r1(-5.2), r2(4), r3 = r1;
-    cout << "test1: " << r1 << ", " << r2 << "\n";
-    cout << "test2: " << ratio::inf_neg << "\n";
-    cout << "test3: " << r3 << "\n";
-}
 
 void comp_test()
 {
